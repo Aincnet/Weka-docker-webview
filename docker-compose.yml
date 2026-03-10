@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  weka:
+    build: .
+    container_name: weka-novnc
+    ports:
+      - "6080:6080"
+    volumes:
+      - /home/user/weka/data:/data
+      - /home/user/weka/results:/results
+    restart: unless-stopped
