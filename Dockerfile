@@ -13,12 +13,10 @@ RUN apt update && apt install -y \
     websockify \
     && rm -rf /var/lib/apt/lists/*
 
-# Création dossier
 RUN mkdir -p /opt
 
 WORKDIR /opt
 
-# ✅ Téléchargement version officielle ZIP
 RUN wget https://downloads.sourceforge.net/project/weka/weka-3-8/3.8.6/weka-3-8-6.zip \
     && unzip weka-3-8-6.zip \
     && mv weka-3-8-6 weka \
